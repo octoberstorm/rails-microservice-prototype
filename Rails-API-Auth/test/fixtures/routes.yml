@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service_id: 1
+  verb: MyString
+  url_pattern: MyString
+  version: MyString
+
+two:
+  service_id: 1
+  verb: MyString
+  url_pattern: MyString
+  version: MyString
