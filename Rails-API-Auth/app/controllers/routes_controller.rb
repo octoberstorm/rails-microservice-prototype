@@ -18,6 +18,7 @@ class RoutesController < ApplicationController
     @route = Route.new(route_params)
 
     if @route.save
+      DynamicRouter.reload
       render json: @route, status: :created, location: @route
     else
       render json: @route.errors, status: :unprocessable_entity
@@ -27,6 +28,7 @@ class RoutesController < ApplicationController
   # PATCH/PUT /routes/1
   def update
     if @route.update(route_params)
+      DynamicRouter.reload
       render json: @route
     else
       render json: @route.errors, status: :unprocessable_entity
@@ -36,6 +38,7 @@ class RoutesController < ApplicationController
   # DELETE /routes/1
   def destroy
     @route.destroy
+    DynamicRouter.reload
   end
 
   private
