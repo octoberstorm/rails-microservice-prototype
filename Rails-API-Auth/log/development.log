@@ -20034,3 +20034,36 @@ Processing by HomeController#auth as */*
 Completed 200 OK in 11ms (Views: 6.7ms | ActiveRecord: 1.0ms)
 
 
+  [1m[35m (2.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mRoute Load (3.4ms)[0m  [1m[34mSELECT `routes`.* FROM `routes`[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mRoute Load (1.3ms)[0m  [1m[34mSELECT `routes`.* FROM `routes`[0m
+Started GET "/api/v1/posts" for ::1 at 2018-09-12 10:35:24 +0700
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GatewaysController#call as */*
+  Parameters: {"gateway"=>{}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mRoute Load (0.9ms)[0m  [1m[34mSELECT  `routes`.* FROM `routes` WHERE `routes`.`verb` = 'get' AND `routes`.`version` = 'v1' AND `routes`.`url_pattern` = 'posts' ORDER BY `routes`.`id` DESC LIMIT 1[0m
+  [1m[36mService Load (1.1ms)[0m  [1m[34mSELECT  `services`.* FROM `services` WHERE `services`.`id` = 2 LIMIT 1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.44ms)
+Completed 200 OK in 191ms (Views: 5.2ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/api/v1/posts" for ::1 at 2018-09-12 10:35:33 +0700
+Processing by GatewaysController#call as */*
+  Parameters: {"gateway"=>{}}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/posts" for ::1 at 2018-09-12 10:35:36 +0700
+Processing by GatewaysController#call as */*
+  Parameters: {"gateway"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  `routes`.* FROM `routes` WHERE `routes`.`verb` = 'get' AND `routes`.`version` = 'v1' AND `routes`.`url_pattern` = 'posts' ORDER BY `routes`.`id` DESC LIMIT 1[0m
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT  `services`.* FROM `services` WHERE `services`.`id` = 2 LIMIT 1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.49ms)
+Completed 200 OK in 66ms (Views: 1.0ms | ActiveRecord: 1.3ms)
+
+

@@ -41,6 +41,12 @@ GET http://localhost:5000/auth
 # with headers
 Content-Type: application/json
 Authorization: Bearer <generated_jwt_above>
+
+# Query post service
+GET http://localhost:5000/api/v1/posts
+# with headers
+Content-Type: application/json
+Authorization Bearer <generated_jwt_above>
 ```
 
 References:
